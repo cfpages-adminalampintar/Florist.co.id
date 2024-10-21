@@ -1,4 +1,4 @@
-name: Generate Complete Sitemap v.2
+name: Generate Complete Sitemap & ReadMe v.2.1
 on: [workflow_dispatch]
 permissions:
   contents: write
@@ -31,6 +31,6 @@ jobs:
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add sitemap-complete.xml README.md
-          git commit -m 'Update sitemap and README'
+          git add sitemap-complete.xml README.md url-list.txt
+          git commit -m 'Update sitemap, README, and URL list'
           git push https://x-access-token:${{ secrets.GH_PAT }}@github.com/${{ github.repository }} HEAD:main
